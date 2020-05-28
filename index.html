@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Untitled</title>
+    <meta name="description" content="This is an example of a meta description.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        article {
+            border-top: 1px solid #e9e9e9;
+            border-left: 1px solid #e9e9e9;
+        }
+
+        button {
+            height: 100%;
+            border: 0;
+            box-shadow: inset 0px 0px 1px #000000;
+            z-index: 999;
+        }
+
+        input[type=checkbox] {
+            margin: 0;
+        }
+
+        a {
+            opacity: 0.25;
+            display: block;
+        }
+
+        .main-container .grid_container>div {
+            margin: 0 auto!important;
+        }
+
+        .row.toolbar.header,
+        .row.toolbar.footer {
+            height: 50px;
+            padding: 0;
+        }
+        /* .row.toolbar.header>button {
+            bottom: -50px;
+        } */
+
+        .col-xs-1.cell,
+        .col-xs-12.cell {
+            background-color: #e9e9e9;
+            text-align: center;
+            box-shadow: inset 0px 0px 1px #ffffff;
+            color: #ffffff;
+            min-width: 50px;
+            min-height: 50px;
+            line-height: 50px;
+            position: relative;
+        }
+
+        .col-xs-11.rows_grid_container .row.cells .col-xs-1.cell:after {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            opacity: 1.0;
+            width: 100%;
+            height: 100%;
+            content: ' ';
+            /* background-color: #e9e9e9; */
+            box-shadow: inset 0px 0px 1px #000000;
+        }
+
+        .col-xs-1.cell.grid.selected:after {
+            background-color: yellow!important;
+        }
+
+        .col-xs-11.rows_grid_container .row.cells .col-xs-1.cell.last:after {
+            background-color: #e1e1e1;
+        }
+
+        .col-xs-11.rows_grid_container .col-xs-1.cell {
+            color: #000000;
+        }
+
+        .col-xs-1.rows_index_container .row.index .cell {
+            background-color: goldenrod;
+            text-align: center;
+        }
+
+        .cols_index_container {
+            min-height: 50px;
+        }
+
+        .row.cols_index_container .col-xs-1.col.index,
+        .row.cols_index_container .col-xs-1.col.index.optional {
+            background-color: darkolivegreen;
+            text-align: center;
+        }
+
+        [onclick*="removeRowIndex"].row.index.removable .col-xs-12.cell,
+        [onclick*="removeColIndex"].col-xs-1.cell.col.index.removable {
+            position: relative;
+        }
+
+        [onclick*="removeRowIndex"].row.index.removable .col-xs-12.cell:after,
+        [onclick*="removeColIndex"].col-xs-1.cell.col.index.removable:after,
+        [onclick*="removeColIndexLast"].col-xs-1.cell.col.index.removable:after {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.125s ease-in;
+            width: 100%;
+            height: 100%;
+            content: ' ';
+        }
+
+        [onclick*="removeRowIndex"].row.index.removable .col-xs-12.cell:hover:after,
+        [onclick*="removeColIndex"].col-xs-1.cell.col.index.removable:hover:after,
+        [onclick*="removeColIndexLast"].col-xs-1.cell.col.index.removable:hover:after {
+            background-color: red;
+            color: white;
+            content: 'X';
+            opacity: 1.0;
+        }
+
+        .row_index {
+            min-width: 50px;
+            background-color: #e9e9e9;
+        }
+
+        .optional {
+            opacity: 0.125;
+            transition: opacity 0.125s ease-in;
+        }
+
+        .optional:hover {
+            opacity: 1.0;
+        }
+
+        .row.cells.optional,
+        .col-xs-11.rows_grid_container .col-xs-1.cell.optional {
+            display: none;
+        }
+
+        button#saveZone {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <section class="container" id="app">
+        </section>
+        <div class="main-container" style="margin-top: 5em;">
+            <div class="grid_container">
+                <div class="grid_tl">
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
